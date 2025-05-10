@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function EsqueceuSenha() {
     const router = useRouter();
@@ -14,7 +15,12 @@ export default function EsqueceuSenha() {
     <div className="min-h-screen bg-black flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-[#1f1f1f] rounded-2xl p-4 shadow-lg">
         <div className="flex justify-center mb-6">
-          <img src="/logoSemFundo.png" alt="Logo" className="w-30 h-30" />
+          <Image 
+            src="/logoSemFundo.png" 
+            alt="Logo" 
+            width={100}
+            height={100} 
+          />
         </div>
 
         <h2 className="text-2xl font-bold text-white text-center mb-6">Esquece a Senha</h2>

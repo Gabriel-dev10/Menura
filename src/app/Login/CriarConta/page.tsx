@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import Image from 'next/image';
 
 export default function CriarConta() {
     const router = useRouter();
@@ -16,7 +17,12 @@ export default function CriarConta() {
     <div className="min-h-screen bg-black flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-[#1f1f1f] rounded-2xl p-4 shadow-lg">
         <div className="flex justify-center mb-6">
-          <img src="/logoSemFundo.png" alt="Logo" className="w-30 h-30" />
+          <Image 
+            src="/logoSemFundo.png" 
+            alt="Logo" 
+            width={100}
+            height={100} 
+          />
         </div>
 
         <h2 className="text-2xl font-bold text-white text-center mb-">Entrar</h2>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image'
 
 export default function Login() {
     const router = useRouter();
@@ -14,10 +15,15 @@ export default function Login() {
     <div className="min-h-screen bg-black flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-[#1f1f1f] rounded-2xl p-4 shadow-lg">
         <div className="flex justify-center mb-6">
-          <img src="/logoSemFundo.png" alt="Logo" className="w-30 h-30" />
+          <Image 
+            src="/logoSemFundo.png" 
+            alt="Logo" 
+            width={100}
+            height={100} 
+          />
         </div>
 
-        <h2 className="text-2xl font-bold text-white text-center mb-">Entrar</h2>
+        <h2 className="text-2xl font-bold text-white text-center">Entrar</h2>
 
         <form className="space-y-4" onSubmit={Login}>
           <div>
@@ -40,7 +46,9 @@ export default function Login() {
 
           <div className="flex items-center justify-between text-sm text-gray-400">
             <label className="flex items-center gap-2">
-              <input type="checkbox" className="accent-pink-500" />
+              <input 
+              type="checkbox" 
+              className="accent-pink-500" />
               Lembre-me
             </label>
             <Link href="/Login/EsqueceuSenha" className="text-pink-500 hover:underline">
