@@ -22,7 +22,7 @@ export default function RedefinirSenha() {
       <div className="w-full max-w-md bg-[#1f1f1f] rounded-2xl p-4 shadow-lg">
         <div className="flex justify-center mb-6">
           <Image 
-            src="/logoSemFundo.png" 
+            src="/LogoSemFundo.png" 
             alt="Logo" 
             width={100}
             height={100} 
