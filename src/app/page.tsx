@@ -1,9 +1,111 @@
-import React from 'react'
+'use client';
 
-const page = () => {
+import { useState } from 'react';
+import { Menu, X, CreditCard, LocateFixed } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import Image from 'next/image';
+import BarraHorizontal from '@/app/components/BarraHorizontal';
+import NavBottom from './components/NavBottom';
+
+export default function Inicio() {
+  const [menuAberto, setMenuAberto] = useState(false);
+
   return (
-    <div>page</div>
-  )
-}
+    <main className="text-white px-4 pt-4 pb-20 w-full max-w-screen-xl mx-auto relative">
+  
+      <header className="flex justify-between items-center mb-2 z-30 relative">
+        <button onClick={() => setMenuAberto(true)}>
+          <Menu size={24} />
+        </button>
+        <div className="text-center text-xs leading-tight">
+          <h1 className="text-base font-bold">
+            Pensão da <span className="font-bold">TIA MARIA</span>
+          </h1>
+          <div className='flex justify-between items-center gap-1'>
+            <LocateFixed size={16} />
+            <p className="text-blue-400 underline">
+              R. Beira Rio, 10 - Centro, Maricá
+            </p>
+          </div>
+        </div>
+        <div className="text-green-400 text-xs font-semibold whitespace-nowrap">● Aberto</div>
+      </header>
 
-export default page
+
+      <div className={`fixed top-0 left-0 h-full w-64 bg-gray-900 text-white z-50 transform transition-transform duration-300 ${menuAberto ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className="flex justify-between items-center px-4 py-4 border-b border-gray-700">
+          <h2 className="text-lg font-semibold">Menu</h2>
+          <button onClick={() => setMenuAberto(false)}>
+            <X size={24} />
+          </button>
+        </div>
+        <nav className="flex flex-col px-4 py-2 space-y-2">
+          <a href="" className="hover:text-blue-400">Pontos</a>
+          <a href="" className="hover:text-blue-400">Instagram</a>
+          <a href="" className="hover:text-blue-400">whatsapp</a>
+        </nav>
+      </div>
+
+    
+      {menuAberto && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-40 z-40"
+          onClick={() => setMenuAberto(false)}
+        />
+      )}
+
+
+      <section className="my-4 rounded-xl overflow-hidden w-full">
+        <Swiper spaceBetween={10} slidesPerView={1}>
+          {[1, 2, 3].map((_, index) => (
+            <SwiperSlide key={index}>
+              <div className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden">
+                <Image
+                  src="/ImageCarrossel.png"
+                  alt="Banner promocional"
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+
+
+      <section className="flex justify-around text-center border-t border-gray-700 pt-2 text-xs sm:text-sm">
+        <div className="flex flex-col items-center">
+          <p className="font-medium mt-1">Pagamentos</p>
+          <CreditCard size={18} />
+        </div>
+        <div>
+          <p className="text-gray-300">Entrega</p>
+          <p className="text-white font-semibold">25min</p>
+        </div>
+        <div>
+          <p className="text-gray-300">Retirada</p>
+          <p className="text-white font-semibold">15min</p>
+        </div>
+      </section>
+
+      <BarraHorizontal />
+      <NavBottom />
+
+
+      <footer className="bg-gray-900 text-white text-sm mt-8 py-3 px-4 rounded-t-xl">
+        <div className="max-w-screen-xl mx-auto flex flex-col sm:flex-row justify-between items-center">
+          <div className="text-center sm:text-left mb-2 sm:mb-0">
+            <p>&copy; {new Date().getFullYear()} Menura</p>
+            <p className="text-gray-400 text-xs">Solução rápida para seu restaurante</p>
+          </div>
+          <div className="flex space-x-4 text-gray-400 text-xs">
+            <a href="#" className="hover:text-white">Política de Privacidade</a>
+            <a href="#" className="hover:text-white">Termos de Uso</a>
+            <a href="#" className="hover:text-white">Contato</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
+}
