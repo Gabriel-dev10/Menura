@@ -1,12 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { Menu, X, CreditCard, LocateFixed } from 'lucide-react';
+import { Menu, X, CreditCard, LocateFixed, LogIn } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Image from 'next/image';
 import BarraHorizontal from '@/app/components/BarraHorizontal';
 import NavBottom from './components/NavBottom';
+import Link from 'next/link';
 
 export default function Inicio() {
   const [menuAberto, setMenuAberto] = useState(false);
@@ -15,7 +16,7 @@ export default function Inicio() {
     <main className="text-white px-4 pt-4 pb-20 w-full max-w-screen-xl mx-auto relative">
   
       <header className="flex justify-between items-center mb-2 z-30 relative">
-        <button onClick={() => setMenuAberto(true)}>
+        <button onClick={() => setMenuAberto(true)}  className='cursor-pointer'>
           <Menu size={24} />
         </button>
         <div className="text-center text-xs leading-tight">
@@ -32,21 +33,25 @@ export default function Inicio() {
         <div className="text-green-400 text-xs font-semibold whitespace-nowrap">● Aberto</div>
       </header>
 
-
       <div className={`fixed top-0 left-0 h-full w-64 bg-gray-900 text-white z-50 transform transition-transform duration-300 ${menuAberto ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex justify-between items-center px-4 py-4 border-b border-gray-700">
           <h2 className="text-lg font-semibold">Menu</h2>
-          <button onClick={() => setMenuAberto(false)}>
+          <button onClick={() => setMenuAberto(false)} className='cursor-pointer'>
             <X size={24} />
           </button>
         </div>
-        <nav className="flex flex-col px-4 py-2 space-y-2">
+        <nav className="flex flex-col px-4 py-4 space-y-2">
           <a href="" className="hover:text-blue-400">Pontos</a>
           <a href="" className="hover:text-blue-400">Instagram</a>
           <a href="" className="hover:text-blue-400">whatsapp</a>
+          <div className="py-4 border-t mt-5 border-gray-700">
+            <div className="flex items-center gap-2 hover:text-blue-400 transition-colors cursor-pointer">
+              <LogIn size={20} />
+              <Link href="/Login"><h1 className="text-sm font-medium">Entrar / Cadastrar</h1></Link>
+            </div>
+          </div>
         </nav>
       </div>
-
     
       {menuAberto && (
         <div
