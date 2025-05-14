@@ -2,36 +2,35 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image'
+import Image from 'next/image';
 
 export default function Login() {
-    const router = useRouter();
-  
-    const Login = (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      router.push('/');
-    };
+  const router = useRouter();
+
+  const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    router.push('/');
+  };
+
   return (
     <div className="min-h-screen bg-black flex items-center justify-center px-4">
-      <div className="w-full max-w-md bg-[#1f1f1f] rounded-2xl p-4 shadow-lg">
-        <div className="flex justify-center mb-6">
-          <Image 
-            src="/LogoSemFundo.png" 
-            alt="Logo" 
-            width={100}
-            height={100} 
-          />
+      <div className="w-full max-w-md rounded-2xl p-6 shadow-lg">
+
+        <div className="text-4xl font-bold text-center mt-6 mb-6">
+          <span className="text-green-500">.</span>
+          <span className="text-white">Get</span>
+          <span className="text-[#ff3131]">Food</span>
         </div>
 
-        <h2 className="text-2xl font-bold text-white text-center">Entrar</h2>
+        <h2 className="text-2xl font-bold mt-10 text-white text-center mb-6">Entrar</h2>
 
-        <form className="space-y-4" onSubmit={Login}>
+        <form className="space-y-4" onSubmit={handleLogin}>
           <div>
             <label className="block text-sm text-gray-300 mb-1">Email</label>
             <input
               type="email"
               placeholder="exemplo@gmail.com"
-              className="w-full p-3 rounded-lg bg-[#2a2a2a] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-500"
+              className="w-full p-3 rounded-lg bg-[#2a2a2a] text-white border border-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ff3c3c]"
             />
           </div>
 
@@ -40,43 +39,46 @@ export default function Login() {
             <input
               type="password"
               placeholder="Digite sua senha"
-              className="w-full p-3 rounded-lg bg-[#2a2a2a] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-500"
+              className="w-full p-3 rounded-lg bg-[#2a2a2a] text-white border border-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ff3c3c]"
             />
           </div>
 
           <div className="flex items-center justify-between text-sm text-gray-400">
             <label className="flex items-center gap-2">
-              <input 
-              type="checkbox" 
-              className="accent-pink-500" />
+              <input type="checkbox" className="accent-[#ff3131]" />
               Lembre-me
             </label>
-            <Link href="/Login/EsqueceuSenha" className="text-pink-500 hover:underline">
+            <Link href="/Login/EsqueceuSenha" className="text-[#ff3131] hover:underline">
               Esqueceu a senha?
             </Link>
           </div>
 
           <button
             type="submit"
-            className="w-full bg-pink-600 hover:bg-pink-700 transition text-white py-3 rounded-lg font-semibold"
+            className="w-full bg-[#ff3131] transition text-white py-3 rounded-lg font-semibold"
           >
             Entrar
           </button>
 
           <div className="flex items-center gap-2 my-4 text-gray-500">
             <hr className="flex-1 border-gray-700" />
-            <span className="text-sm">ou continue com</span>
+            <span className="text-sm">Ou continue com</span>
             <hr className="flex-1 border-gray-700" />
           </div>
 
           <button className="w-full bg-white text-black flex items-center justify-center gap-2 py-3 rounded-lg font-medium hover:bg-gray-200 transition">
-            <img src="/googleico.svg" alt="Google" className="w-5 h-5" />
+            <Image 
+              src="/googleico.svg" 
+              alt="Google" 
+              width={20}
+              height={20}
+            />
             Login com Google
           </button>
 
-          <p className="text-center text-sm text-gray-400 mt-4">
-            Não tem uma conta?{' '}
-            <Link href="Login/CriarConta" className="text-pink-500 hover:underline">
+          <p className="text-center text-sm text-gray-400 mt-6">
+            Crie sua conta aqui!{' '}
+            <Link href="/Login/CriarConta" className="text-[#ff3131] hover:underline">
               Criar
             </Link>
           </p>
