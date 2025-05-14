@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import ListaProdutos from './ListaProdutos';
 
-type Categoria = 'Pizza' | 'Comidas' | 'Bebidas' | 'Sobremesa' | 'Acompanhamentos';
+type Categoria = 'Lanches' | 'Salgados' | 'Biscoitos' | 'Bebidas' | 'Cervejas';
 
 export default function BarraHorizontal() {
-  const categorias: Categoria[] = ['Comidas', 'Bebidas', 'Pizza', 'Sobremesa', 'Acompanhamentos'];
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState<Categoria>('Pizza');
+  const categorias: Categoria[] = ['Lanches', 'Salgados', 'Biscoitos', 'Bebidas', 'Cervejas'];
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState<Categoria>('Lanches');
 
   return (
     <>

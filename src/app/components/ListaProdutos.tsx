@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-type Categoria = 'Pizza' | 'Comidas' | 'Bebidas' | 'Sobremesa' | 'Acompanhamentos';
+type Categoria = 'Lanches' | 'Salgados' | 'Biscoitos' | 'Bebidas' | 'Cervejas';
 
 interface Produto {
   nome: string;
@@ -14,7 +14,7 @@ interface ListaProdutosProps {
 }
 
 const produtos: Record<Categoria, Produto[]> = {
-  Pizza: [
+  Lanches: [
     {
       nome: 'Vegana',
       descricao: 'brócolis, molho de tomate, tomate em rodelas',
@@ -40,7 +40,7 @@ const produtos: Record<Categoria, Produto[]> = {
     imagem: '/Img/pizza4queijo.jpg',
   },
   ],
-  Comidas: [
+  Salgados: [
     {
       nome: 'Feijoada',
       descricao: 'com arroz, farofa e couve',
@@ -66,7 +66,7 @@ const produtos: Record<Categoria, Produto[]> = {
       imagem: '/Img/pratoexecutivo.jpg',
     },
   ],
-  Bebidas: [
+  Biscoitos: [
     {
       nome: 'Coca-Cola Lata',
       descricao: 'Refrigerante 350ml',
@@ -92,7 +92,7 @@ const produtos: Record<Categoria, Produto[]> = {
       imagem: '/Img/guarana.jpg',
     },
   ],
-  Sobremesa: [
+  Bebidas: [
     {
       nome: 'Pudim de Leite',
       descricao: 'clássico pudim com calda de caramelo',
@@ -118,7 +118,7 @@ const produtos: Record<Categoria, Produto[]> = {
       imagem: '/torta-limao.jpg',
     },
   ],
-  Acompanhamentos: [
+  Cervejas: [
     {
       nome: 'Batata Frita',
       descricao: 'porção média com sal e ervas',

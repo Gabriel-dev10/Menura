@@ -21,12 +21,12 @@ export default function Inicio() {
         </button>
         <div className="text-center text-xs leading-tight">
           <h1 className="text-base font-bold">
-            Pensão da <span className="font-bold">TIA MARIA</span>
+            GBC Coffee
           </h1>
           <div className='flex justify-between items-center gap-1'>
             <LocateFixed size={16} />
             <p className="text-blue-400 underline">
-              R. Beira Rio, 10 - Centro, Maricá
+              R. Ver. Luiz Antonio da Cunha, da, 295
             </p>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function Inicio() {
             <SwiperSlide key={index}>
               <div className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="/ImageCarrossel.png"
+                  src="/capuccino.jpg"
                   alt="Banner promocional"
                   fill
                   className="object-cover rounded-lg"
@@ -85,8 +85,8 @@ export default function Inicio() {
           <CreditCard size={18} />
         </div>
         <div>
-          <p className="text-gray-300">Entrega</p>
-          <p className="text-white font-semibold">25min</p>
+          <p className="text-gray-300">Fila</p>
+          <p className="text-green-400 font-semibold">15</p>
         </div>
         <div>
           <p className="text-gray-300">Retirada</p>
@@ -101,7 +101,7 @@ export default function Inicio() {
       <footer className="bg-gray-900 text-white text-sm mt-8 py-3 px-4 rounded-t-xl">
         <div className="max-w-screen-xl mx-auto flex flex-col sm:flex-row justify-between items-center">
           <div className="text-center sm:text-left mb-2 sm:mb-0">
-            <p>&copy; {new Date().getFullYear()} Menura</p>
+            <p>&copy; {new Date().getFullYear()} .)GetFood </p>
             <p className="text-gray-400 text-xs">Solução rápida para seu restaurante</p>
           </div>
           <div className="flex space-x-4 text-gray-400 text-xs">
