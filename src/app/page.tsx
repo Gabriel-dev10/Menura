@@ -5,9 +5,10 @@ import { Menu, X, CreditCard, LocateFixed, LogIn } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Image from 'next/image';
-import BarraHorizontal from '@/app/components/BarraHorizontal';
-import NavBottom from './components/NavBottom';
+import BarraHorizontal from '@/components/BarraHorizontal';
+import NavBottom from '../components/NavBottom';
 import Link from 'next/link';
+import Footer from '@/components/footer';
 
 export default function Inicio() {
   const [menuAberto, setMenuAberto] = useState(false);
@@ -62,21 +63,21 @@ export default function Inicio() {
 
 
       <section className="my-4 rounded-xl overflow-hidden w-full">
-        <Swiper spaceBetween={10} slidesPerView={1}>
-          {[1, 2, 3].map((_, index) => (
-            <SwiperSlide key={index}>
-              <div className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden">
-                <Image
-                  src="/capuccino.jpg"
-                  alt="Banner promocional"
-                  fill
-                  className="object-cover rounded-lg"
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
+          <Swiper spaceBetween={10} slidesPerView={1}>
+            {[1, 2, 3].map((_, index) => (
+              <SwiperSlide key={index}>
+                <div className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden">
+                  <Image
+                    src="/imgcarrossel.avif"
+                    alt="Banner promocional"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </section>
 
 
       <section className="flex justify-around text-center border-t border-gray-700 pt-2 text-xs sm:text-sm">
@@ -96,21 +97,8 @@ export default function Inicio() {
 
       <BarraHorizontal />
       <NavBottom />
+      <Footer/>
 
-
-      <footer className="bg-gray-900 text-white text-sm mt-8 py-3 px-4 rounded-t-xl">
-        <div className="max-w-screen-xl mx-auto flex flex-col sm:flex-row justify-between items-center">
-          <div className="text-center sm:text-left mb-2 sm:mb-0">
-            <p>&copy; {new Date().getFullYear()} .)GetFood </p>
-            <p className="text-gray-400 text-xs">Solução rápida para seu restaurante</p>
-          </div>
-          <div className="flex space-x-4 text-gray-400 text-xs">
-            <a href="#" className="hover:text-white">Política de Privacidade</a>
-            <a href="#" className="hover:text-white">Termos de Uso</a>
-            <a href="#" className="hover:text-white">Contato</a>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
