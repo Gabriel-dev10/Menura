@@ -5,10 +5,10 @@ import { Menu, X, CreditCard, LocateFixed, LogIn } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Image from 'next/image';
-import BarraHorizontal from '@/components/BarraHorizontal';
+import BarraHorizontal from '../components/BarraHorizontal';
 import NavBottom from '../components/NavBottom';
 import Link from 'next/link';
-import Footer from '@/components/footer';
+import Footer from '../components/Footer';
 
 export default function Inicio() {
   const [menuAberto, setMenuAberto] = useState(false);
